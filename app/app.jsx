@@ -61,6 +61,8 @@ class App extends React.Component {
                           to='/reactanimate'>React-animate</Link>
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
                           to='/cssanimate'>ReactCSSTransitionGroup</Link>
+                    <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
+                          to='/statetransitions'>State Transitions</Link>
                 </div>
                 {this.props.children}
             </div>
