@@ -29,7 +29,7 @@ class ReactAnimateGrid extends BaseGrid {
                             name, // animation name
                             {opacity: .5}, // initial style
                             {opacity: 1}, // final style
-                            getRandomInt(500, 1000) // animation duration (in ms)
+                            500 // animation duration (in ms)
                         );
                     }
                 }

@@ -27,13 +27,13 @@ class ThirdPartyGrid extends BaseGrid {
             }).snabbt({
                 fromOpacity: .5,
                 opacity: 1,
-                duration: getRandomInt(500, 1000),
+                duration: 500,
                 easing: 'ease'
             });
 
         }
     }
-    
+
     componentDidMount() {
         this.animate();
     }

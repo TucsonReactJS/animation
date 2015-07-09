@@ -2,8 +2,8 @@ import React from "react/addons"
 import BaseGrid from "./base_grid"
 import InlineCss from "react-inline-css"
 import {getRandomInt} from "./utils"
-
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
 export default class CssAnimateGrid extends BaseGrid {
 
     stylesheet() {
@@ -17,10 +17,10 @@ export default class CssAnimateGrid extends BaseGrid {
                  transform:translateZ(0) translateY(-3000px);
                  -webkit-transition: all;
                 -moz-transition: all;
-                -ms-transition: all; /* IE10 is actually unprefixed */
+                -ms-transition: all;
                 -o-transition: all;
                 transition: all;
-                -webkit-transition-timing-function: ease; /* Safari and Chrome */
+                -webkit-transition-timing-function: ease;
                 transition-timing-function: ease;
             }
 
