@@ -51,6 +51,19 @@ class App extends React.Component {
         };
     }
 
+    imageStyle() {
+        return {
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            height: "200px",
+            marginLeft: "-100px",
+            marginTop: "-100px",
+            opacity: .7,
+            zIndex: "-1"
+        }
+    }
+
     render() {
         return (
             <div >
@@ -64,6 +77,7 @@ class App extends React.Component {
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
                           to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
+                <img style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
                 {this.props.children}
             </div>
         );

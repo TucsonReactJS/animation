@@ -8,25 +8,21 @@ export default class StateTransitions extends React.Component {
     stylesheet() {
         return `
             .page-item-enter,.page-item-appear {
-                 opacity: .5;
                  transform:translateZ(0) translateY(-100vh);
                  transition: all 1s ease;
             }
 
             .page-item-enter.page-item-enter-active,.page-item-appear.page-item-appear-active {
               transform:translateZ(0) translateY(0px);
-              opacity: 1;
             }
 
             .page-item-leave {
-              opacity: 1;
               transform:translateZ(0) translateY(0px);
               transition: all 1s ease;
             }
 
             .page-item-leave.page-item-leave-active {
               transform:translateZ(0) translateY(100vh);
-              opacity: 0.5;
             }
 
         `;
@@ -72,9 +68,32 @@ export default class StateTransitions extends React.Component {
         };
     }
 
+    mainContainerStyle() {
+        return {
+            backgroundColor: "#34495e",
+            height: "100vh",
+            width: "100%",
+            display: "flex",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
+            position:"absolute",
+            top:0
+        }
+    }
+
+    labelStyle() {
+        return {
+            color: "#fff",
+            fontSize: "40px",
+            fontWeight: "bold",
+            textTransform: "uppercase"
+        }
+    }
+
     render() {
         const key = this.props.location.pathname;
-        return (<div>
+        return (<div style={this.mainContainerStyle()}>
             <InlineCss stylesheet={this.stylesheet()}>
                 <div style={this.linkContainerStyle()}>
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
@@ -82,6 +101,7 @@ export default class StateTransitions extends React.Component {
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
                           to="/statetransitions/pagetwo">Page Two</Link>
                 </div>
+                <span style={this.labelStyle()}>Root</span>
                 <ReactCSSTransitionGroup component="div" transitionName="page-item" transitionAppear={true}>
                     {cloneElement(this.props.children || <div/>, {key})}
                 </ReactCSSTransitionGroup>

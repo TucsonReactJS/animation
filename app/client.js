@@ -32,6 +32,7 @@ React.render(<Router history={history}>
             <Route path="pagetwo" component={PageTwo}/>
             <Redirect from="statetransitions" to="pageone" />
         </Route>
+        <Redirect from="/" to="thirdparty" />
         <Route path="*" component={App}/>
     </Route>
 </Router>, mountNode);

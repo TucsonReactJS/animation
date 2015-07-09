@@ -63,7 +63,6 @@ gulp.task('watch', ['build'], function() {
             baseDir: 'dist',
             middleware: function( req, res, next ) {
                 var fileName = url.parse(req.url);
-                console.log(fileName);
                 fileName = fileName.href.split(fileName.search).join("");
                 var fileExists = fs.existsSync('dist' + fileName);
                 if ( !fileExists && fileName.indexOf("browser-sync-client") < 0 ) {
