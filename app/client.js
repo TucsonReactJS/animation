@@ -8,7 +8,7 @@ import { history } from 'react-router/lib/BrowserHistory'
 import App from "./app"
 import ThirdPartyGrid from "./third_party_grid"
 import ReactAnimateGrid from "./react_animate_grid"
-
+import CssAnimateGrid from "./css_animate_grid"
 
 //put React into the global scope for chrome dev tool support
 window.React = React;
@@ -19,6 +19,7 @@ React.render(<Router history={history}>
     <Route path="/" component={App}>
         <Route path="thirdparty" component={ThirdPartyGrid}/>
         <Route path="reactanimate" component={ReactAnimateGrid}/>
+        <Route path="cssanimate" component={CssAnimateGrid}/>
         <Route path="*" component={App}/>
     </Route>
 </Router>, mountNode);
