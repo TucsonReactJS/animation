@@ -33,11 +33,7 @@ class ThirdPartyGrid extends BaseGrid {
 
         }
     }
-
-    componentDidUpdate() {
-        this.animate();
-    }
-
+    
     componentDidMount() {
         this.animate();
     }
