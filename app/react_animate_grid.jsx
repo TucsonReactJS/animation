@@ -20,8 +20,8 @@ class ReactAnimateGrid extends BaseGrid {
             // alternate syntax using Symbol
             this[Animate['@animate']](
                 name, // animation name
-                {transform: `translateY(${-getRandomInt(900, 4000)}px)`, opacity: 0}, // initial style
-                {transform: `translateY(0px)`, opacity: .5}, // final style
+                {transform: `translateZ(0) translateY(${-getRandomInt(900, 4000)}px)`, opacity: 0}, // initial style
+                {transform: `translateZ(0) translateY(0px)`, opacity: .5}, // final style
                 getRandomInt(2000, 3000), // animation duration (in ms)
                 {
                     onComplete: ()=> {
