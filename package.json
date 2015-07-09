@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/TucsonReactJS/animation",
   "dependencies": {
+    "lodash": "^3.10.0",
     "randomcolor": "^0.3.0",
     "react": "^0.13.3",
+    "react-animate": "^3.0.0",
     "react-router": "^1.0.0-beta3",
     "snabbt.js": "^0.5.4"
   },

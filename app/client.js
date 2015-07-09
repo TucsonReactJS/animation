@@ -7,9 +7,8 @@ import { history } from 'react-router/lib/BrowserHistory'
 //components
 import App from "./app"
 import ThirdParty from "./thirdparty"
+import ReactAnimate from "./react_animate"
 
-console.log(Router);
-console.log(Route);
 
 //put React into the global scope for chrome dev tool support
 window.React = React;
@@ -19,7 +18,7 @@ const mountNode = document.getElementById('app');
 React.render(<Router history={history}>
     <Route path="/" component={App}>
         <Route path="thirdparty" component={ThirdParty}/>
+        <Route path="reactanimate" component={ReactAnimate}/>
         <Route path="*" component={App}/>
     </Route>
 </Router>, mountNode);
-

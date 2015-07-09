@@ -8,6 +8,8 @@ const gulp        = require('gulp')
     , browserSync = require('browser-sync')
     , reload      = browserSync.reload
     , del         = require('del')
+    , fs          = require('fs')
+    , url         = require("url")
     , $           = require('gulp-load-plugins')({pattern: ['gulp-*']});
 
 /**
@@ -41,7 +43,7 @@ gulp.task('pack', function() {
             },
             module: {
                 loaders: [
-                    {test: /\.jsx$/, exclude: /node_modules/, loader: 'babel-loader'},
+                    {test: /\.jsx$/, loader: 'babel-loader'},
                     {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
                 ]
             }
@@ -58,7 +60,16 @@ gulp.task('watch', ['build'], function() {
         notify: true,
         port: 8000,
         server: {
-            baseDir: 'dist'
+            baseDir: 'dist',
+            middleware: function( req, res, next ) {
+                var fileName = url.parse(req.url);
+                fileName = fileName.href.split(fileName.search).join("");
+                var fileExists = fs.existsSync('dist' + fileName);
+                if ( !fileExists && fileName.indexOf("browser-sync-client") < 0 ) {
+                    req.url = "/" + "index.html";
+                }
+                return next();
+            }
         }
     });
 
