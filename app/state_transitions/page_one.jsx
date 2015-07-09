@@ -9,7 +9,8 @@ export default class PageOne extends React.Component {
             alignContent: "center",
             alignItems: "center",
             justifyContent: "center",
-            position:"absolute"
+            position:"absolute",
+            top:0
         }
     }
 

@@ -62,7 +62,7 @@ class App extends React.Component {
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
                           to='/cssanimate'>ReactCSSTransitionGroup</Link>
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
-                          to='/statetransitions'>State Transitions</Link>
+                          to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
                 {this.props.children}
             </div>

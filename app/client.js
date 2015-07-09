@@ -2,7 +2,7 @@
  * The client JS file that brings in React and bootstraps the app into the page from the server state.
  */
 import React from "react"
-import { Router, Route, Link } from 'react-router'
+import { Router, Route, Link, Redirect } from 'react-router'
 import { history } from 'react-router/lib/BrowserHistory'
 //components
 import App from "./app"
@@ -30,6 +30,7 @@ React.render(<Router history={history}>
         <Route path="statetransitions" component={StateTransitions}>
             <Route path="pageone" component={PageOne}/>
             <Route path="pagetwo" component={PageTwo}/>
+            <Redirect from="statetransitions" to="pageone" />
         </Route>
         <Route path="*" component={App}/>
     </Route>
