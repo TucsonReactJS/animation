@@ -11,6 +11,10 @@ class App extends React.Component {
         super(props);
     }
 
+    /**
+     * Get the style for a link
+     * @returns {{height: string, lineHeight: string, color: string, backgroundColor: string, display: string, paddingLeft: string, paddingRight: string}}
+     */
     linkStyle() {
         return {
             height: "50px",
@@ -23,10 +27,18 @@ class App extends React.Component {
         };
     }
 
+    /**
+     * Get the style for an active link
+     * @returns {{backgroundColor: string}}
+     */
     linkActiveStyle() {
         return {backgroundColor: "rgba(11,11,11,.7)"}
     }
 
+    /**
+     * Get the style for the upper link container
+     * @returns {{position: string, zIndex: string, top: number, left: number, right: number, height: string, backgroundColor: string}}
+     */
     linkContainerStyle() {
         return {
             position: "absolute",

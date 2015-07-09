@@ -1,14 +1,13 @@
 'use strict';
 import React from "react"
 import snabbt from "snabbt.js"
-import randomColor from "randomcolor"
-import {getRandomInt, getImages} from "./utils"
+import {getRandomInt} from "./utils"
 import BaseGrid from "./base_grid"
 /**
  * The third party module represents how to integrate a third-party animation library with react components
  */
 export default
-class ThirdParty extends BaseGrid {
+class ThirdPartyGrid extends BaseGrid {
     constructor( props ) {
         super(props);
     }

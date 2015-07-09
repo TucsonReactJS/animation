@@ -6,8 +6,8 @@ import { Router, Route, Link } from 'react-router'
 import { history } from 'react-router/lib/BrowserHistory'
 //components
 import App from "./app"
-import ThirdParty from "./thirdparty"
-import ReactAnimate from "./react_animate"
+import ThirdPartyGrid from "./third_party_grid"
+import ReactAnimateGrid from "./react_animate_grid"
 
 
 //put React into the global scope for chrome dev tool support
@@ -17,8 +17,8 @@ const mountNode = document.getElementById('app');
 //render our app component into that node
 React.render(<Router history={history}>
     <Route path="/" component={App}>
-        <Route path="thirdparty" component={ThirdParty}/>
-        <Route path="reactanimate" component={ReactAnimate}/>
+        <Route path="thirdparty" component={ThirdPartyGrid}/>
+        <Route path="reactanimate" component={ReactAnimateGrid}/>
         <Route path="*" component={App}/>
     </Route>
 </Router>, mountNode);

@@ -1,6 +1,6 @@
 'use strict';
 import React from "react"
-import {getRandomInt, getImages} from "./utils"
+import {getRandomInt} from "./utils"
 import Animate from "react-animate"
 import _ from "lodash"
 import BaseGrid from "./base_grid"
@@ -8,7 +8,7 @@ import BaseGrid from "./base_grid"
 /**
  * The third party module represents how to use react-animate
  */
-class ReactAnimate extends BaseGrid {
+class ReactAnimateGrid extends BaseGrid {
 
     /**
      * Animation function using react animate
@@ -36,6 +36,12 @@ class ReactAnimate extends BaseGrid {
         super(props);
     }
 
+    /**
+     * Get the list item style
+     * @param item
+     * @param idx
+     * @returns {*}
+     */
     listItemStyle( item, idx ) {
         let itemStyle = super.listItemStyle(item);
         return _.assign(itemStyle, this[Animate['@getAnimatedStyle']](`grid-animation-${idx}`))
@@ -54,4 +60,4 @@ class ReactAnimate extends BaseGrid {
     }
 }
 
-export default Animate.extend(ReactAnimate)
+export default Animate.extend(ReactAnimateGrid)
