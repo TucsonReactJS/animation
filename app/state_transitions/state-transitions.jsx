@@ -8,25 +8,25 @@ export default class StateTransitions extends React.Component {
     stylesheet() {
         return `
             .page-item-enter,.page-item-appear {
-                 opacity: 0;
-                 transform:translateZ(0) translateY(-3000px);
-                 transition: all .5s ease;
+                 opacity: .5;
+                 transform:translateZ(0) translateY(-100vh);
+                 transition: all 1s ease;
             }
 
             .page-item-enter.page-item-enter-active,.page-item-appear.page-item-appear-active {
               transform:translateZ(0) translateY(0px);
-              opacity: .5;
+              opacity: 1;
             }
 
             .page-item-leave {
               opacity: 1;
               transform:translateZ(0) translateY(0px);
-              transition: all .5s ease;
+              transition: all 1s ease;
             }
 
             .page-item-leave.page-item-leave-active {
-              transform:translateZ(0) translateY(3000px);
-              opacity: 0.00;
+              transform:translateZ(0) translateY(100vh);
+              opacity: 0.5;
             }
 
         `;

@@ -8,7 +8,8 @@ export default class PageOne extends React.Component {
             display: "flex",
             alignContent: "center",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            position:"absolute"
         }
     }
 
