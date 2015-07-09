@@ -9,6 +9,9 @@ export default
 class App extends React.Component {
     constructor( props ) {
         super(props);
+        this.state = {
+            shouldShowImage: true
+        };
     }
 
     /**
@@ -59,7 +62,8 @@ class App extends React.Component {
             height: "200px",
             marginLeft: "-100px",
             marginTop: "-100px",
-            opacity: .7,
+            opacity: this.props.location.pathname === "/" ? 1 : 0,
+            transition: "all .5s ease",
             zIndex: "-1"
         }
     }
@@ -68,16 +72,19 @@ class App extends React.Component {
         return (
             <div >
                 <div style={this.linkContainerStyle()}>
-                    <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()} to='/thirdparty'>Third party
+                    <Link style={this.linkStyle()}
+                          activeStyle={this.linkActiveStyle()} to='/thirdparty'>Third party
                         animation libraries</Link>
                     <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
                           to='/reactanimate'>React-animate</Link>
-                    <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
+                    <Link style={this.linkStyle()}
+                          activeStyle={this.linkActiveStyle()}
                           to='/cssanimate'>ReactCSSTransitionGroup</Link>
-                    <Link style={this.linkStyle()} activeStyle={this.linkActiveStyle()}
+                    <Link style={this.linkStyle()}
+                          activeStyle={this.linkActiveStyle()}
                           to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
-                <img style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
+                <img ref="logo" style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
                 {this.props.children}
             </div>
         );
