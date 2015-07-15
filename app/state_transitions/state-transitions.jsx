@@ -5,6 +5,10 @@ const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 export default class StateTransitions extends React.Component {
 
+    /**
+     * Get the stylesheet for this element
+     * @returns {*}
+     */
     stylesheet() {
         return `
             .page-item-enter,.page-item-appear {
@@ -67,7 +71,9 @@ export default class StateTransitions extends React.Component {
             backgroundColor: "rgba(33,33,33,.5)"
         };
     }
-
+    /**
+     * Styles for main page transition container
+     */
     mainContainerStyle() {
         return {
             backgroundColor: "#34495e",
@@ -81,7 +87,9 @@ export default class StateTransitions extends React.Component {
             top:0
         }
     }
-
+    /**
+     * Styles for centered labels
+     */
     labelStyle() {
         return {
             color: "#fff",
