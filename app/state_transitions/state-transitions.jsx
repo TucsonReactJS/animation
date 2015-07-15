@@ -102,6 +102,7 @@ export default class StateTransitions extends React.Component {
                           to="/statetransitions/pagetwo">Page Two</Link>
                 </div>
                 <span style={this.labelStyle()}>Root</span>
+                {/* This is where the magic happens. Clone the children and add a KEY*/}
                 <ReactCSSTransitionGroup component="div" transitionName="page-item" transitionAppear={true}>
                     {cloneElement(this.props.children || <div/>, {key})}
                 </ReactCSSTransitionGroup>
