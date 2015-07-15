@@ -4,11 +4,14 @@
 import React from "react"
 import { Router, Route, Link, Redirect } from 'react-router'
 import { history } from 'react-router/lib/BrowserHistory'
+
 //components
 import App from "./app"
 import ThirdPartyGrid from "./third_party_grid"
 import ReactAnimateGrid from "./react_animate_grid"
 import CssAnimateGrid from "./css_animate_grid"
+import ReactMotionGrid from "./react_motion_grid"
+
 //state transition components
 import StateTransitions from "./state_transitions/state-transitions"
 import PageOne from "./state_transitions/page_one"
@@ -27,6 +30,7 @@ React.render(<Router history={history}>
         <Route path="thirdparty" component={ThirdPartyGrid}/>
         <Route path="reactanimate" component={ReactAnimateGrid}/>
         <Route path="cssanimate" component={CssAnimateGrid}/>
+        <Route path="reactmotion" component={ReactMotionGrid}/>
         <Route path="statetransitions" component={StateTransitions}>
             <Route path="pageone" component={PageOne}/>
             <Route path="pagetwo" component={PageTwo}/>

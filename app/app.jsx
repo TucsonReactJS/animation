@@ -82,6 +82,9 @@ class App extends React.Component {
                           to='/cssanimate'>ReactCSSTransitionGroup</Link>
                     <Link style={this.linkStyle()}
                           activeStyle={this.linkActiveStyle()}
+                          to='/reactmotion'>React-Motion Grid</Link>
+                    <Link style={this.linkStyle()}
+                          activeStyle={this.linkActiveStyle()}
                           to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
                 <img ref="logo" style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
