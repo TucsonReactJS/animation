@@ -82,7 +82,7 @@ class App extends React.Component {
                           to='/cssanimate'>ReactCSSTransitionGroup</Link>
                     <Link style={this.linkStyle()}
                           activeStyle={this.linkActiveStyle()}
-                          to='/reactmotion'>React-Motion Grid</Link>
+                          to='/reactmotion'>React-Motion</Link>
                     <Link style={this.linkStyle()}
                           activeStyle={this.linkActiveStyle()}
                           to='/statetransitions'>React-Router State Transitions</Link>

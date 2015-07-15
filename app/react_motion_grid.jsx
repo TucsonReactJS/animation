@@ -1,12 +1,11 @@
 'use strict';
 import React from "react"
 import {getRandomInt} from "./utils"
-import _ from "lodash"
 import BaseGrid from "./base_grid"
 import Spring from 'react-motion'
 
 /**
- * The third party module represents how to use react-animate
+ * The third party module represents how to use react-motion
  */
 export default class ReactMotionGrid extends BaseGrid {
 
@@ -40,13 +39,25 @@ export default class ReactMotionGrid extends BaseGrid {
         return itemStyle;
     }
 
+    springValueConfig() {
+        return {
+            val: {
+                top: this.state.mounted ? 0 : -3000,
+                opacity: {
+                    val: this.state.mounted ? 1 : 0,
+                    config: [15, getRandomInt(17, 30)]
+                }
+            }, config: [50, getRandomInt(17, 30)]
+        };
+    }
+
     render() {
 
         let items = this.state.items.map(( i, idx ) =>
             <Spring
-                endValue={{val:{top: this.state.mounted ? 0 : -3000, opacity:this.state.mounted ? 1 : 0}, config: [45, getRandomInt(17,30)]}}>
+                endValue={this.springValueConfig()}>
                 { ( {val} ) =>
-                    <li style={this.listItemStyle(i,idx, {top:val.top,opacity:val.opacity})} key={idx}></li>
+                    <li style={this.listItemStyle(i,idx, {top:val.top,opacity:val.opacity.val})} key={idx}></li>
                 }
             </Spring>);
         return (
