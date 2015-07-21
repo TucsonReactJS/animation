@@ -11,6 +11,7 @@ import ThirdPartyGrid from "./third_party_grid"
 import ReactAnimateGrid from "./react_animate_grid"
 import CssAnimateGrid from "./css_animate_grid"
 import ReactMotionGrid from "./react_motion_grid"
+import Menu from "./menu"
 
 //state transition components
 import StateTransitions from "./state_transitions/state-transitions"
@@ -31,12 +32,13 @@ React.render(<Router history={history}>
         <Route path="reactanimate" component={ReactAnimateGrid}/>
         <Route path="cssanimate" component={CssAnimateGrid}/>
         <Route path="reactmotion" component={ReactMotionGrid}/>
+        <Route path="menu" component={Menu}/>
         <Route path="statetransitions" component={StateTransitions}>
             <Route path="pageone" component={PageOne}/>
             <Route path="pagetwo" component={PageTwo}/>
-            <Redirect from="statetransitions" to="pageone" />
+            <Redirect from="statetransitions" to="pageone"/>
         </Route>
-        <Redirect from="/" to="thirdparty" />
+        <Redirect from="/" to="thirdparty"/>
         <Route path="*" component={App}/>
     </Route>
 </Router>, mountNode);

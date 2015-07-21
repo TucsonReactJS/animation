@@ -85,6 +85,9 @@ class App extends React.Component {
                           to='/reactmotion'>React-Motion</Link>
                     <Link style={this.linkStyle()}
                           activeStyle={this.linkActiveStyle()}
+                          to='/menu'>Cool Menu</Link>
+                    <Link style={this.linkStyle()}
+                          activeStyle={this.linkActiveStyle()}
                           to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
                 <img ref="logo" style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
