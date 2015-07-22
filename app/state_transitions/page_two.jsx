@@ -9,9 +9,9 @@ export default class PageTwo extends React.Component {
             alignContent: "center",
             alignItems: "center",
             justifyContent: "center",
-            position:"absolute",
-            top:0,
-            left:0
+            position: "absolute",
+            top: 0,
+            left: 0
         }
     }
 
@@ -19,7 +19,7 @@ export default class PageTwo extends React.Component {
         return {
             color: "#fff",
             fontSize: "40px",
-            fontWeight:"bold",
+            fontWeight: "bold",
             textTransform: "uppercase"
         }
     }

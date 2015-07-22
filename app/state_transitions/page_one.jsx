@@ -9,18 +9,18 @@ export default class PageOne extends React.Component {
             alignContent: "center",
             alignItems: "center",
             justifyContent: "center",
-            position:"absolute",
-            top:0,
-            left:0
+            position: "absolute",
+            top: 0,
+            left: 0
         }
     }
 
     labelStyle() {
         return {
             color: "#fff",
-            fontSize:"40px",
-            fontWeight:"bold",
-            textTransform:"uppercase"
+            fontSize: "40px",
+            fontWeight: "bold",
+            textTransform: "uppercase"
         }
     }
 

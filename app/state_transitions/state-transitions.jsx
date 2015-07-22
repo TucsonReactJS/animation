@@ -71,6 +71,7 @@ export default class StateTransitions extends React.Component {
             backgroundColor: "rgba(33,33,33,.5)"
         };
     }
+
     /**
      * Styles for main page transition container
      */
@@ -83,10 +84,11 @@ export default class StateTransitions extends React.Component {
             alignContent: "center",
             alignItems: "center",
             justifyContent: "center",
-            position:"absolute",
-            top:0
+            position: "absolute",
+            top: 0
         }
     }
+
     /**
      * Styles for centered labels
      */

@@ -85,7 +85,7 @@ class App extends React.Component {
                           to='/reactmotion'>React-Motion</Link>
                     <Link style={this.linkStyle()}
                           activeStyle={this.linkActiveStyle()}
-                          to='/menu'>Cool Menu</Link>
+                          to='/menu'>Menu</Link>
                     <Link style={this.linkStyle()}
                           activeStyle={this.linkActiveStyle()}
                           to='/statetransitions'>React-Router State Transitions</Link>

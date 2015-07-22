@@ -39,10 +39,12 @@ class Menu extends React.Component {
                   font-size: 3em;
                   margin-left: -19px;
                   margin-top: -29px;
+                   transition:all 250ms ease;
             }
             .radial-menu {
             cursor:pointer;
               position: fixed;
+              list-style:none;
               top: 50%;
               left: 50%;
               margin-top:-50px;
@@ -52,16 +54,45 @@ class Menu extends React.Component {
               width: 100px;
               background: #333;
               border-radius:50px;
+              transition:all 250ms ease;
+            }
+            .radial-menu.open {
+              transform: scale3d(2, 2, 2);
+
+            }
+            .radial-menu.open:before {
+                 font-size: 0em;
+                  margin-left: 0;
+                  margin-top: 0;
+            }
+            .radial-menu li{
+              position:absolute;
+              height:30px;
+              width:30px;
+              display:block;
+              border-radius:30px;
+            }
+            .radial-menu li:nth-child(1){
+                background-color:red;
+            }
+            .radial-menu li:nth-child(2){
+                background-color:blue;
+            }
+            .radial-menu li:nth-child(3){
+                 background-color:green;
+            }
+            .radial-menu li:nth-child(4){
+                background-color:yellow;
             }
         `;
     }
 
-    blur() {
+    enterMenu() {
         let _this = this;
         //setup our tween
         this.tween = new TweenLite({
             filter: 0
-        }, .2, {
+        }, .25, {
             ease: "Quad.easeOut",
             filter: 5,
             onUpdate: function() {
@@ -71,15 +102,17 @@ class Menu extends React.Component {
             }
         });
 
+        this.setState({overMenu: true});
+
     }
 
-    unblur() {
+    exitMenu() {
         let _this = this;
 
         //setup our tween
         this.tween = new TweenLite({
             filter: 5
-        }, .2, {
+        }, .25, {
             ease: "Quad.easeOut",
             filter: 0,
             onUpdate: function() {
@@ -89,15 +122,22 @@ class Menu extends React.Component {
             }
         });
 
+        this.setState({overMenu: false});
+
     }
 
     render() {
+        let menuClassName = this.state.overMenu ? "radial-menu open" : "radial-menu";
         return (<div>
             <InlineCss stylesheet={this.stylesheet()}>
                 <div ref="bg" style={{webkitFilter:`blur(${this.state.bgFilter}px`}} className="menu-bg-frost">
                 </div>
-                <ul className="radial-menu" onMouseEnter={this.blur.bind(this)}
-                    onMouseOut={this.unblur.bind(this)} onMouseLeave={this.unblur.bind(this)}>
+                <ul className={menuClassName} onMouseEnter={this.enterMenu.bind(this)}
+                    onMouseOut={this.exitMenu.bind(this)} onMouseLeave={this.exitMenu.bind(this)}>
+                    <li aria-label="Profile"></li>
+                    <li aria-label="Settings"></li>
+                    <li aria-label="Message"></li>
+                    <li aria-label="Friends"></li>
                 </ul>
             </InlineCss>
         </div>);
