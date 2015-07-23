@@ -23,68 +23,97 @@ class Menu extends React.Component {
                 background-image: url('images/menu-bg.jpeg');
                 background-size: cover;
                 content: ' ';
-                opacity: 0.4;
+                opacity: 0.7;
                 filter: blur(0px);
                 -webkit-filter: blur(0px);
                 transition:all 250ms ease;
                 transform:translateZ(0);
             }
-
-            .radial-menu:before {
-                  content:'\\2630';
-                    position: absolute;
-                  left: 50%;
-                  color: #fff;
-                  top: 50%;
-                  font-size: 3em;
-                  margin-left: -19px;
-                  margin-top: -29px;
-                   transition:all 250ms ease;
-            }
             .radial-menu {
-            cursor:pointer;
+              cursor: pointer;
               position: fixed;
-              list-style:none;
-              top: 50%;
-              left: 50%;
-              margin-top:-50px;
-              margin-left:-50px;
+              list-style: none;
+              bottom: 80px;
+              right: 80px;
+              margin:0 auto;
               padding: 0;
               height: 100px;
               width: 100px;
               background: #333;
-              border-radius:50px;
-              transition:all 250ms ease;
+              border-radius: 50px;
+              transition: all 500ms ease;
+              opacity:.8;
             }
             .radial-menu.open {
               transform: scale3d(2, 2, 2);
-
+              opacity:1;
             }
             .radial-menu.open:before {
-                 font-size: 0em;
-                  margin-left: 0;
-                  margin-top: 0;
+              font-size: 0em;
+              margin-left: 0;
+              margin-top: 0;
             }
-            .radial-menu li{
-              position:absolute;
-              height:30px;
-              width:30px;
-              display:block;
-              border-radius:30px;
+            .radial-menu.open li {
+              transform: scale3d(1, 1, 1);
+              opacity: 1;
             }
-            .radial-menu li:nth-child(1){
-                background-color:red;
+            .radial-menu:before {
+              content: '\\2630';
+              position: absolute;
+              left: 50%;
+              color: #fff;
+              top: 50%;
+              font-size: 3em;
+              margin-left: -19px;
+              margin-top: -29px;
+              transition: all 900ms ease;
             }
-            .radial-menu li:nth-child(2){
-                background-color:blue;
+            .radial-menu li {
+              position: absolute;
+              height: 30px;
+              width: 30px;
+              display: block;
+              border-radius: 30px;
+              transition: all 500ms ease;
+              transform: scale3d(0, 0, 0);
+              line-height: 30px;
+              text-align: center;
+              color: #fff;
+              opacity: 0;
             }
-            .radial-menu li:nth-child(3){
-                 background-color:green;
+            .radial-menu li:nth-child(1) {
+              background-color: #e67e22;
+              right: 15px;
+              top: 15px;
+              transition-delay: 100ms;
             }
-            .radial-menu li:nth-child(4){
-                background-color:yellow;
+            .radial-menu li:nth-child(2) {
+              background-color: #9b59b6;
+              left: 15px;
+              top: 15px;
+              transition-delay: 200ms;
+            }
+            .radial-menu li:nth-child(3) {
+              background-color: #3498db;
+              left: 15px;
+              bottom: 15px;
+              transition-delay: 300ms;
+            }
+            .radial-menu li:nth-child(4) {
+              background-color: #2ecc71;
+              right: 15px;
+              bottom: 15px;
+              transition-delay: 400ms;
             }
         `;
+    }
+
+    toggleMenu() {
+        if ( this.state.overMenu ) {
+            this.exitMenu();
+        } else {
+            this.enterMenu();
+        }
     }
 
     enterMenu() {
@@ -92,7 +121,7 @@ class Menu extends React.Component {
         //setup our tween
         this.tween = new TweenLite({
             filter: 0
-        }, .25, {
+        }, .5, {
             ease: "Quad.easeOut",
             filter: 5,
             onUpdate: function() {
@@ -112,7 +141,7 @@ class Menu extends React.Component {
         //setup our tween
         this.tween = new TweenLite({
             filter: 5
-        }, .25, {
+        }, .5, {
             ease: "Quad.easeOut",
             filter: 0,
             onUpdate: function() {
@@ -132,12 +161,11 @@ class Menu extends React.Component {
             <InlineCss stylesheet={this.stylesheet()}>
                 <div ref="bg" style={{webkitFilter:`blur(${this.state.bgFilter}px`}} className="menu-bg-frost">
                 </div>
-                <ul className={menuClassName} onMouseEnter={this.enterMenu.bind(this)}
-                    onMouseOut={this.exitMenu.bind(this)} onMouseLeave={this.exitMenu.bind(this)}>
-                    <li aria-label="Profile"></li>
-                    <li aria-label="Settings"></li>
-                    <li aria-label="Message"></li>
-                    <li aria-label="Friends"></li>
+                <ul className={menuClassName} onClick={this.toggleMenu.bind(this)}>
+                    <li>♫</li>
+                    <li>☼</li>
+                    <li>✉</li>
+                    <li>✎</li>
                 </ul>
             </InlineCss>
         </div>);
