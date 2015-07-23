@@ -1,6 +1,7 @@
 'use strict';
 import React from "react"
 import { Link } from 'react-router'
+import SourceCode from "./source_code"
 
 /**
  * The app class represents our top level component
@@ -69,6 +70,7 @@ class App extends React.Component {
     }
 
     render() {
+        let sourcePath = this.props.children ? this.props.children.type.path : "app/app.jsx";
         return (
             <div >
                 <div style={this.linkContainerStyle()}>
@@ -91,8 +93,11 @@ class App extends React.Component {
                           to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
                 <img ref="logo" style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
+                <SourceCode path={sourcePath}/>
                 {this.props.children}
             </div>
+
+
         );
     }
 }

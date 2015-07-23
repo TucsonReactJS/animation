@@ -4,7 +4,7 @@
  * @type {Gulp|exports}
  */
 const gulp        = require('gulp')
-    , gwebpack    = require('gulp-webpack')
+    , gwebpack    = require('webpack-stream')
     , browserSync = require('browser-sync')
     , reload      = browserSync.reload
     , del         = require('del')
@@ -43,8 +43,8 @@ gulp.task('pack', function() {
             },
             module: {
                 loaders: [
-                    {test: /\.jsx$/, loader: 'babel-loader'},
-                    {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+                    {test: /\.jsx$/, loader: 'babel?stage=1'},
+                    {test: /\.js$/, exclude: /node_modules/, loader: 'babel?stage=1'}
                 ]
             }
         }))

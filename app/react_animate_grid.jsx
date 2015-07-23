@@ -4,10 +4,12 @@ import {getRandomInt} from "./utils"
 import Animate from "react-animate"
 import _ from "lodash"
 import BaseGrid from "./base_grid"
+import path from "./path"
 
 /**
  * The third party module represents how to use react-animate
  */
+@path("app/react_animate_grid.jsx")
 class ReactAnimateGrid extends BaseGrid {
 
     /**

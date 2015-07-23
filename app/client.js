@@ -39,6 +39,6 @@ React.render(<Router history={history}>
             <Redirect from="statetransitions" to="pageone"/>
         </Route>
         <Redirect from="/" to="thirdparty"/>
-        <Route path="*" component={App}/>
+        <Route path="*" component={App} />
     </Route>
 </Router>, mountNode);

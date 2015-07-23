@@ -2,8 +2,11 @@ import React from "react/addons"
 import InlineCss from "react-inline-css"
 import Animate from "react-animate"
 import snabbt from "snabbt.js"
+import path from "./path"
 
+@path("app/menu.jsx")
 class Menu extends React.Component {
+
 
     constructor( props ) {
         super(props);
@@ -12,6 +15,10 @@ class Menu extends React.Component {
         }
     }
 
+    /**
+     * The stylesheet for this component
+     * @returns {*}
+     */
     stylesheet() {
 
         return `
@@ -108,6 +115,9 @@ class Menu extends React.Component {
         `;
     }
 
+    /**
+     * Toggle the menu open or close
+     */
     toggleMenu() {
         if ( this.state.overMenu ) {
             this.exitMenu();
@@ -116,6 +126,9 @@ class Menu extends React.Component {
         }
     }
 
+    /**
+     * Run a tween when the menu is active
+     */
     enterMenu() {
         let _this = this;
         //setup our tween
@@ -135,6 +148,9 @@ class Menu extends React.Component {
 
     }
 
+    /**
+     * Run a tween when the menu is not active
+     */
     exitMenu() {
         let _this = this;
 

@@ -3,8 +3,10 @@ import BaseGrid from "./base_grid"
 import InlineCss from "react-inline-css"
 import {getRandomInt} from "./utils"
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+import path from "./path"
 
-export default class CssAnimateGrid extends BaseGrid {
+@path("app/css_animate_grid.jsx")
+class CssAnimateGrid extends BaseGrid {
 
     stylesheet() {
 
@@ -48,3 +50,5 @@ export default class CssAnimateGrid extends BaseGrid {
     }
 
 }
+
+export default CssAnimateGrid;

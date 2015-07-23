@@ -10,6 +10,7 @@ import {getRandomInt, getImages} from "./utils"
 export default
 class BaseGrid extends React.Component {
 
+
     listItemStyle( item ) {
         return {
             height: "25vh",

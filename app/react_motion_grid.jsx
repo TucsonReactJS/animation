@@ -3,11 +3,13 @@ import React from "react"
 import {getRandomInt} from "./utils"
 import BaseGrid from "./base_grid"
 import Spring from 'react-motion'
+import path from "./path"
 
 /**
  * The third party module represents how to use react-motion
  */
-export default class ReactMotionGrid extends BaseGrid {
+@path("app/react_motion_grid.jsx")
+class ReactMotionGrid extends BaseGrid {
 
     /**
      * Animation function using react animate
@@ -69,3 +71,5 @@ export default class ReactMotionGrid extends BaseGrid {
         );
     }
 }
+
+export default ReactMotionGrid;

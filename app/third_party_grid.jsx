@@ -3,10 +3,12 @@ import React from "react"
 import snabbt from "snabbt.js"
 import {getRandomInt} from "./utils"
 import BaseGrid from "./base_grid"
+import path from "./path"
+
 /**
  * The third party module represents how to integrate a third-party animation library with react components
  */
-export default
+@path("app/third_party_grid.jsx")
 class ThirdPartyGrid extends BaseGrid {
     constructor( props ) {
         super(props);
@@ -53,3 +55,4 @@ class ThirdPartyGrid extends BaseGrid {
     }
 }
 
+export default ThirdPartyGrid;
