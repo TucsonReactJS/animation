@@ -4,6 +4,7 @@ import snabbt from "snabbt.js"
 import {getRandomInt} from "./utils"
 import BaseGrid from "./base_grid"
 import path from "./path"
+import SourceCode from "./source_code"
 
 /**
  * The third party module represents how to integrate a third-party animation library with react components
@@ -50,6 +51,7 @@ class ThirdPartyGrid extends BaseGrid {
                 <ul style={this.listStyle()}>
                     {items}
                 </ul>
+                <SourceCode path={ThirdPartyGrid.path}/>
             </div>
         );
     }

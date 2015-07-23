@@ -5,6 +5,7 @@ import Animate from "react-animate"
 import _ from "lodash"
 import BaseGrid from "./base_grid"
 import path from "./path"
+import SourceCode from "./source_code"
 
 /**
  * The third party module represents how to use react-animate
@@ -67,6 +68,7 @@ class ReactAnimateGrid extends BaseGrid {
                 <ul style={this.listStyle()}>
                     {items}
                 </ul>
+                <SourceCode path={ReactAnimateGrid.path}/>
             </div>
         );
     }

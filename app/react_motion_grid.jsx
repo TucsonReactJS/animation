@@ -4,6 +4,7 @@ import {getRandomInt} from "./utils"
 import BaseGrid from "./base_grid"
 import Spring from 'react-motion'
 import path from "./path"
+import SourceCode from "./source_code"
 
 /**
  * The third party module represents how to use react-motion
@@ -67,6 +68,7 @@ class ReactMotionGrid extends BaseGrid {
                 <ul style={this.listStyle()}>
                     {items}
                 </ul>
+                <SourceCode path={ReactMotionGrid.path}/>
             </div>
         );
     }

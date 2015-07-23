@@ -22,7 +22,7 @@ export default class SourceCode extends React.Component {
                 bottom:0;
                 left:0;
                 position:fixed;
-                 background-color:#333;
+                 background-color:#002b36;
                   z-index:9999;
                   overflow:hidden;
                   transition:all 525ms ease;
@@ -48,23 +48,36 @@ export default class SourceCode extends React.Component {
             .source-code pre,code {
                 border-radius:0px;
                 border:none;
-                background-color:#333;
+                background-color:#002b36;
                 color:#fff;
                 opacity:0;
             }
         `;
     }
 
+    componentWillReceiveProps( nextProps ) {
+        if ( nextProps.path !== this.props.path ) {
+            this.getSource(nextProps);
+        }
+    }
+
     componentDidMount() {
+        this.getSource(this.props);
+
+    }
+
+    getSource( props ) {
         request
-            .get(`https://api.github.com/repos/TucsonReactjs/animation/contents/${this.props.path}`)
+            .get(`https://api.github.com/repos/TucsonReactjs/animation/contents/${props.path}`)
             .end(( err, res ) => {
                 if ( !err ) {
                     this.setState({content: atob(res.body.content)});
+                    //highlight
+                    let code = React.findDOMNode(this.refs.code);
+                    hljs.highlightBlock(code);
                 } else {
                     this.setState({content: "Couldn't load source code"});
                 }
-
             });
     }
 
@@ -102,7 +115,7 @@ export default class SourceCode extends React.Component {
         return (<InlineCss stylesheet={this.stylesheet()}>
             <div className={className} onClick={this.toggleSource.bind(this)}>
                 {icon}
-                <pre><code>{this.state.content}</code></pre>
+                <pre><code ref="code" className="es6">{this.state.content}</code></pre>
             </div>
         </InlineCss>);
     }

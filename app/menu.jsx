@@ -3,6 +3,7 @@ import InlineCss from "react-inline-css"
 import Animate from "react-animate"
 import snabbt from "snabbt.js"
 import path from "./path"
+import SourceCode from "./source_code"
 
 @path("app/menu.jsx")
 class Menu extends React.Component {
@@ -184,6 +185,7 @@ class Menu extends React.Component {
                     <li>✎</li>
                 </ul>
             </InlineCss>
+            <SourceCode path={Menu.path}/>
         </div>);
     }
 }

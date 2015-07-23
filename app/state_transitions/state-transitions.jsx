@@ -2,8 +2,11 @@ import React, { cloneElement } from "react/addons"
 import { Link, RouteHandler } from 'react-router'
 import InlineCss from "react-inline-css"
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+import path from "../path"
+import SourceCode from "../source_code"
 
-export default class StateTransitions extends React.Component {
+@path("app/state_transitions/state-transitions.jsx")
+class StateTransitions extends React.Component {
 
     /**
      * Get the stylesheet for this element
@@ -103,6 +106,8 @@ export default class StateTransitions extends React.Component {
 
     render() {
         const key = this.props.location.pathname;
+        const sourcePath = this.props.children ? this.props.children.type.path : StateTransitions.path;
+        console.log(sourcePath);
         return (<div style={this.mainContainerStyle()}>
             <InlineCss stylesheet={this.stylesheet()}>
                 <div style={this.linkContainerStyle()}>
@@ -117,6 +122,8 @@ export default class StateTransitions extends React.Component {
                     {cloneElement(this.props.children || <div/>, {key})}
                 </ReactCSSTransitionGroup>
             </InlineCss>
+            <SourceCode path={sourcePath}/>
         </div>);
     }
 }
+export default StateTransitions;

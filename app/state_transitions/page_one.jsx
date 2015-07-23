@@ -1,5 +1,8 @@
 import React from "react/addons"
-export default class PageOne extends React.Component {
+import path from "../path"
+
+@path("app/state_transitions/page_one.jsx")
+class PageOne extends React.Component {
     pageStyle() {
         return {
             backgroundColor: "#3498db",
@@ -28,3 +31,4 @@ export default class PageOne extends React.Component {
         return (<div style={this.pageStyle()}><span style={this.labelStyle()}>Page One</span></div>);
     }
 }
+export default PageOne;

@@ -4,6 +4,7 @@ import InlineCss from "react-inline-css"
 import {getRandomInt} from "./utils"
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 import path from "./path"
+import SourceCode from "./source_code"
 
 @path("app/css_animate_grid.jsx")
 class CssAnimateGrid extends BaseGrid {
@@ -45,6 +46,7 @@ class CssAnimateGrid extends BaseGrid {
                         {items}
                     </ReactCSSTransitionGroup>
                 </InlineCss>
+                <SourceCode path={CssAnimateGrid.path}/>
             </div>
         );
     }

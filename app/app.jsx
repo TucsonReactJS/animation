@@ -70,7 +70,7 @@ class App extends React.Component {
     }
 
     render() {
-        let sourcePath = this.props.children ? this.props.children.type.path : "app/app.jsx";
+        let code = this.props.children ? "" : <SourceCode path="app/app.jsx"/>;
         return (
             <div >
                 <div style={this.linkContainerStyle()}>
@@ -93,7 +93,7 @@ class App extends React.Component {
                           to='/statetransitions'>React-Router State Transitions</Link>
                 </div>
                 <img ref="logo" style={this.imageStyle()} src="http://tucsonreactjs.github.io/img/ReactCactus.svg"/>
-                <SourceCode path={sourcePath}/>
+                {code}
                 {this.props.children}
             </div>
 
