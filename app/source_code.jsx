@@ -22,7 +22,7 @@ export default class SourceCode extends React.Component {
                 bottom:0;
                 left:0;
                 position:fixed;
-                 background-color:#002b36;
+                 background-color:#f5f2f0;
                   z-index:9999;
                   overflow:hidden;
                   transition:all 525ms ease;
@@ -32,7 +32,7 @@ export default class SourceCode extends React.Component {
                   position: absolute;
                   top: 13px;
                   right: 15px;
-                  fill: white;
+                  fill: #333;
 
             }
             .source-code.open {
@@ -48,7 +48,6 @@ export default class SourceCode extends React.Component {
             .source-code pre,code {
                 border-radius:0px;
                 border:none;
-                background-color:#002b36;
                 color:#fff;
                 opacity:0;
             }
@@ -72,9 +71,7 @@ export default class SourceCode extends React.Component {
             .end(( err, res ) => {
                 if ( !err ) {
                     this.setState({content: atob(res.body.content)});
-                    //highlight
-                    let code = React.findDOMNode(this.refs.code);
-                    hljs.highlightBlock(code);
+                    Prism.highlightAll();
                 } else {
                     this.setState({content: "Couldn't load source code"});
                 }
@@ -115,7 +112,7 @@ export default class SourceCode extends React.Component {
         return (<InlineCss stylesheet={this.stylesheet()}>
             <div className={className} onClick={this.toggleSource.bind(this)}>
                 {icon}
-                <pre><code ref="code" className="es6">{this.state.content}</code></pre>
+                <pre><code ref="code" className="language-jsx">{this.state.content}</code></pre>
             </div>
         </InlineCss>);
     }

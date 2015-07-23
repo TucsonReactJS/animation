@@ -18,9 +18,7 @@ import StateTransitions from "./state_transitions/state-transitions"
 import PageOne from "./state_transitions/page_one"
 import PageTwo from "./state_transitions/page_two"
 
-//configure highlighting
-import jshl from "./jshl"
-hljs.registerLanguage("es6",jshl);
+
 
 //put React into the global scope for chrome dev tool support
 window.React = React;

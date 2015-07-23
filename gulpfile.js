@@ -24,6 +24,7 @@ gulp.task('clean', function( cb ) {
  */
 gulp.task('copy', function() {
     var html     = gulp.src("./app/index.html").pipe(gulp.dest("dist/"))
+        , vendor = gulp.src("./app/vendor/**.*").pipe(gulp.dest("dist/vendor"))
         , images = gulp.src("./app/images/**/*.*").pipe(gulp.dest("dist/images"));
 });
 
