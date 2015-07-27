@@ -31,7 +31,7 @@ export default class SourceCode extends React.Component {
                 }
 
                 .source-code span, .source-code code, .source-code pre {
-                  font-size: ${this.state.fontSize} px;
+                  font-size: ${this.state.fontSize}px;
                 }
 
                 .source-code .icon-document {
@@ -63,8 +63,8 @@ export default class SourceCode extends React.Component {
                 .source-code.open {
                   bottom: 0;
                   left: 0;
-                  height: ${this.state.fullscreen ? 100 : 70} vh;
-                  width: ${this.state.fullscreen ? 100 : 70} vw;
+                  height: ${this.state.fullscreen ? 100 : 70}vh;
+                  width: ${this.state.fullscreen ? 100 : 70}vw;
                   overflow: auto;
                 }
 
