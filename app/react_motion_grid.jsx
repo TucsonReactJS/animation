@@ -13,12 +13,15 @@ import SourceCode from "./source_code"
 class ReactMotionGrid extends BaseGrid {
 
     /**
-     * Animation function using react animate
+     * Animation function React motion, just sets the mounted state
      */
     animate() {
         this.setState({mounted: true});
     }
 
+    /**
+     * Start the animation on mount
+     */
     componentDidMount() {
         this.animate();
     }
@@ -42,6 +45,10 @@ class ReactMotionGrid extends BaseGrid {
         return itemStyle;
     }
 
+    /**
+     * Get the value for the React-Motion spring
+     * @returns {{val: {top: number, opacity: {val: number, config: *[]}}, config: *[]}}
+     */
     springValueConfig() {
         return {
             val: {

@@ -9,12 +9,15 @@ import SourceCode from "./source_code"
 /**
  * The third party module represents how to integrate a third-party animation library with react components
  */
-@path("app/third_party_grid.jsx")
-class ThirdPartyGrid extends BaseGrid {
+@path("app/third_party_grid.jsx") class ThirdPartyGrid extends BaseGrid {
     constructor( props ) {
         super(props);
     }
 
+    /**
+     * The third party animation function uses refs to find the dom nodes, then passes them to the animation
+     * library. In this case, snabbt
+     */
     animate() {
         for ( let i = 0; i < this.state.items.length; i++ ) {
             //grab our ref
@@ -37,6 +40,9 @@ class ThirdPartyGrid extends BaseGrid {
         }
     }
 
+    /**
+     * Start the animation when the component mounts
+     */
     componentDidMount() {
         this.animate();
     }

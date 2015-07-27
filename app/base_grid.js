@@ -10,7 +10,11 @@ import {getRandomInt, getImages} from "./utils"
 export default
 class BaseGrid extends React.Component {
 
-
+    /**
+     * Get the default list item style for our HBO GO style entrance animation
+     * @param item
+     * @returns {{height: string, width: string, float: string, margin: string, backgroundImage: *, backgroundSize: string}}
+     */
     listItemStyle( item ) {
         return {
             height: "25vh",
@@ -22,6 +26,10 @@ class BaseGrid extends React.Component {
         }
     }
 
+    /**
+     * Get the default list style for our HBO GO style entrance animation
+     * @returns {{listStyle: string, margin: string, padding: string}}
+     */
     listStyle() {
         return {
             listStyle: "none",

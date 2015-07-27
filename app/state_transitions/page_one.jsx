@@ -3,6 +3,10 @@ import path from "../path"
 
 @path("app/state_transitions/page_one.jsx")
 class PageOne extends React.Component {
+    /**
+     * The page style
+     * @returns {{backgroundColor: string, height: string, width: string, display: string, alignContent: string, alignItems: string, justifyContent: string, position: string, top: number, left: number}}
+     */
     pageStyle() {
         return {
             backgroundColor: "#3498db",
@@ -18,6 +22,10 @@ class PageOne extends React.Component {
         }
     }
 
+    /**
+     * The label style for the centered text
+     * @returns {{color: string, fontSize: string, fontWeight: string, textTransform: string}}
+     */
     labelStyle() {
         return {
             color: "#fff",

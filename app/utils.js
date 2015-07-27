@@ -1,7 +1,16 @@
+/**
+ * Get a random int between and min and max bounds. Grabbed from MDN
+ * @param min
+ * @param max
+ * @returns {*}
+ */
 export function getRandomInt( min, max ) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-
+/**
+ * Get a set of images from the public directory
+ * @returns {*[]}
+ */
 export function getImages() {
     return [
         {url: "images/photo_1.jpeg"},

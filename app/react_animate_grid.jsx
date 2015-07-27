@@ -14,7 +14,7 @@ import SourceCode from "./source_code"
 class ReactAnimateGrid extends BaseGrid {
 
     /**
-     * Animation function using react animate
+     * Animation function using react animate, sets CSS transform styles on the state
      */
     animate() {
 
@@ -41,6 +41,9 @@ class ReactAnimateGrid extends BaseGrid {
 
     }
 
+    /**
+     * Start the animation on mount
+     */
     componentDidMount() {
         this.animate();
     }

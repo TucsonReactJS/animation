@@ -55,6 +55,10 @@ class App extends React.Component {
         };
     }
 
+    /**
+     * Style for the Tucson React JS logo
+     * @returns {{position: string, top: string, left: string, height: string, marginLeft: string, marginTop: string, opacity: number, transition: string, zIndex: string}}
+     */
     imageStyle() {
         return {
             position: "absolute",

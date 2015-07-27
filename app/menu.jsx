@@ -8,7 +8,10 @@ import SourceCode from "./source_code"
 @path("app/menu.jsx")
 class Menu extends React.Component {
 
-
+    /**
+     * Constructor. Sets a default blur filter state
+     * @param props
+     */
     constructor( props ) {
         super(props);
         this.state = {

@@ -6,9 +6,11 @@ const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 import path from "./path"
 import SourceCode from "./source_code"
 
-@path("app/css_animate_grid.jsx")
-class CssAnimateGrid extends BaseGrid {
-
+@path("app/css_animate_grid.jsx") class CssAnimateGrid extends BaseGrid {
+    /**
+     * The stylesheet for this component. Sets the requisite ReactCSSTransitionGroup classes
+     * @returns {*}
+     */
     stylesheet() {
 
         let gridItems = this.state.items

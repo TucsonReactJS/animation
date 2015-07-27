@@ -3,6 +3,10 @@ import path from "../path"
 
 @path("app/state_transitions/page_two.jsx")
 class PageTwo extends React.Component {
+    /**
+     * The page style
+     * @returns {{backgroundColor: string, height: string, width: string, display: string, alignContent: string, alignItems: string, justifyContent: string, position: string, top: number, left: number}}
+     */
     pageStyle() {
         return {
             backgroundColor: "#1abc9c",
@@ -17,7 +21,10 @@ class PageTwo extends React.Component {
             left: 0
         }
     }
-
+    /**
+     * The label style for the centered text
+     * @returns {{color: string, fontSize: string, fontWeight: string, textTransform: string}}
+     */
     labelStyle() {
         return {
             color: "#fff",

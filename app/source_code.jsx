@@ -3,6 +3,7 @@ import request from "superagent"
 import InlineCss from "react-inline-css"
 
 export default class SourceCode extends React.Component {
+
     constructor( props ) {
         super(props);
         this.state = {content: "", open: false, fullscreen: false, fontSize: 13};
@@ -15,62 +16,68 @@ export default class SourceCode extends React.Component {
     stylesheet() {
 
         return `
+                .source-code {
+                  height: 50px;
+                  width: 50px;
+                  bottom: 0;
+                  left: 0;
+                  position: fixed;
+                  background-color: #f5f2f0;
+                  z-index: 9999;
+                  overflow: hidden;
+                  transition: all 525ms ease;
+                  cursor: pointer;
 
-            .source-code {
-                height:50px;
-                width:50px;
-                bottom:0;
-                left:0;
-                position:fixed;
-                 background-color:#f5f2f0;
-                  z-index:9999;
-                  overflow:hidden;
-                  transition:all 525ms ease;
-                  cursor:pointer;
+                }
 
-            }
-            .source-code span, .source-code code, .source-code pre {
-              font-size:${this.state.fontSize}px;
-            }
-            .source-code .icon-document {
+                .source-code span, .source-code code, .source-code pre {
+                  font-size: ${this.state.fontSize} px;
+                }
+
+                .source-code .icon-document {
                   position: absolute;
                   top: 13px;
                   right: 15px;
                   fill: #333;
 
-            }
-            .source-code .icon-bar {
-                display:none;
-            }
-
-             .source-code.open .icon-bar {
-               display:block;
-                   position: absolute;
-                top: 13px;
-                right: 48px;
-                  fill: #333;
-            }
-                .source-code.open .icon-bar svg {
-                    fill:#333;
-                    stroke:#333;
-                    margin-right:14px;
                 }
-            .source-code.open {
-                bottom:0;
-                left:0;
-                height:${this.state.fullscreen ? 100 : 70}vh;
-                width:${this.state.fullscreen ? 100 : 70}vw;
-                overflow:auto;
-            }
-            .source-code.open pre,code {
-              opacity:1 !important;
-            }
-            .source-code pre,code {
-                border-radius:0px;
-                border:none;
-                color:#fff;
-                opacity:0;
-            }
+
+                .source-code .icon-bar {
+                  display: none;
+                }
+
+                .source-code.open .icon-bar {
+                  display: block;
+                  position: absolute;
+                  top: 13px;
+                  right: 48px;
+                  fill: #333;
+                }
+
+                .source-code.open .icon-bar svg {
+                  fill: #333;
+                  stroke: #333;
+                  margin-right: 14px;
+                }
+
+                .source-code.open {
+                  bottom: 0;
+                  left: 0;
+                  height: ${this.state.fullscreen ? 100 : 70} vh;
+                  width: ${this.state.fullscreen ? 100 : 70} vw;
+                  overflow: auto;
+                }
+
+                .source-code.open pre, code {
+                  opacity: 1 !important;
+                }
+
+                .source-code pre, code {
+                  border-radius: 0px;
+                  border: none;
+                  color: #fff;
+                  opacity: 0;
+                }
         `;
     }
 

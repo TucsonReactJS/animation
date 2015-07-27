@@ -5,8 +5,7 @@ const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 import path from "../path"
 import SourceCode from "../source_code"
 
-@path("app/state_transitions/state-transitions.jsx")
-class StateTransitions extends React.Component {
+@path("app/state_transitions/state-transitions.jsx") class StateTransitions extends React.Component {
 
     /**
      * Get the stylesheet for this element
