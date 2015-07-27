@@ -46,7 +46,7 @@ class App extends React.Component {
     linkContainerStyle() {
         return {
             position: "absolute",
-            zIndex: "99999999",
+            zIndex: "1",
             top: 0,
             left: 0,
             right: 0,
